@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Treino Eventos JS</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background-color: rgb(97, 143, 136);
+}
+
+/* MAIN bonito e estável */
+main {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 30px; /* <-- corrigido */
+  background: linear-gradient(
+    135deg,
+    rgb(26, 224, 214),
+    rgb(123, 158, 153),
+    rgb(200, 247, 243)
+  );
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+main:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+h1 { font-size: 60px; margin-top: 20px; }
+
+input { padding: 10px; width: 300px; max-width: 100%; }
+
+button {
+  margin-top: 10px;
+  padding: 11px;
+  width: 200px;
+  background-color: rgb(255,149,27);
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px black;
+}
+button:hover { background-color: yellow; }
+
+/* Lado a lado (flex) */
+.container-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 53px;
+  margin: 50px auto;
+  
+}
+
+/* #botao2 estável (sem inline-block/margin-right) */
+#botao2 { width: 200px;
+
+}
+
+/* imagem com transição + classe de esconder */
+#imagem {
+  width: 250px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 10px black;
+  transition: opacity .25s ease;
+  
+}
+#imagem.escondida {
+  opacity: 0;
+  visibility: hidden; /* mantém o espaço do layout */
+}
+
+.container-caixa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  margin-top: 15px;
+}
+
+#selectOpcao {
+  background-color: rgb(255,149,27);
+  height: 60px;
+  width: 200px;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 1px 2px black;
+}
+#selectOpcao:hover { background-color: yellow; }
+
+#caixa {
+  width: 250px;
+  height: 150px;
+  line-height: 150px;
+  text-align: center;
+  font-size: clamp(14px, 2.5vw, 20px); /* fonte se ajusta a caixa */
+  font-weight: bold;
+  background-color: lightgray;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px black;
+  white-space: nowrap;/*nao deixa quebrar linha*/
+  
+}
+
+#resultadoSelect {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* ===== Responsivo ===== */
+
+/* Tablet e abaixo */
+@media (max-width: 768px) {
+  h1 { font-size: 42px; }
+  main { margin: 20px auto; padding: 20px; }
+
+  .container-img { gap: 12px; }
+  #imagem { width: 220px; }
+  #botao2, #selectOpcao { width: 180px; }
+
+  .container-caixa { gap: 24px; }
+  #caixa { width: 220px; height: 140px; line-height: 140px; }
+}
+
+/* Celular */
+@media (max-width: 480px) {
+  h1 { font-size: 32px; }
+
+  /* empilha botão e imagem, mantendo centro */
+  .container-img { flex-direction: column; gap: 10px; }
+
+  /* idem caixa e select */
+  .container-caixa { flex-direction: column; gap: 12px; }
+
+  input, #botao1, #botao2, #selectOpcao {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  #imagem { width: 100%; max-width: 320px; }
+  #caixa { width: 100%; max-width: 320px; }
+}
+    </style>
+  </head>
+
+  <body>
+    <main>
+      <h1 id="titulo">Treinado Eventos</h1>
+      <button id="botao1">Mudar a cor do título</button>
+
+      <input id="campoTexto" type="text" placeholder="Digite algo" />
+      <p id="resultado"></p>
+
+      <div class="container-img">
+
+        <button id="botao2">Mostrar/Esconder imagem(duplo clique)</button>
+        <img id="imagem"src="img/imagem-1.jpg" alt="Imagem teste"/>
+  
+      </div>
+
+      <div class="container-caixa">
+        <select id="selectOpcao">
+          <option value="">Seleciona uma cor</option>
+          <option value="blue">Azul</option>
+          <option value="green">Verde</option>
+          <option value="purple">Roxo</option>
+        </select>
+        <div id="caixa">Passe o mouse</div>
+      </div>
+
+      <p id="resultadoSelect"></p>
+
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
