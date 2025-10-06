@@ -127,37 +127,34 @@ button:hover { background-color: yellow; }
 }
 
 /* ===== Responsivo ===== */
-
-/* Tablet e abaixo */
-@media (max-width: 768px) {
-  h1 { font-size: 42px; }
-  main { margin: 20px auto; padding: 20px; }
-
-  .container-img { gap: 12px; }
-  #imagem { width: 220px; }
-  #botao2, #selectOpcao { width: 180px; }
-
-  .container-caixa { gap: 24px; }
-  #caixa { width: 220px; height: 140px; line-height: 140px; }
-}
-
-/* Celular */
-@media (max-width: 480px) {
-  h1 { font-size: 32px; }
-
-  /* empilha botão e imagem, mantendo centro */
-  .container-img { flex-direction: column; gap: 10px; }
-
-  /* idem caixa e select */
-  .container-caixa { flex-direction: column; gap: 12px; }
-
-  input, #botao1, #botao2, #selectOpcao {
-    width: 100%;
-    max-width: 320px;
+@media (max-width: 600px) {
+  main {
+    width: 95%;
+    padding: 20px;
   }
 
-  #imagem { width: 100%; max-width: 320px; }
-  #caixa { width: 100%; max-width: 320px; }
+  h1 {
+    font-size: 36px;
+  }
+
+  button, select, input {
+    width: 90%;
+    margin: 10px auto;
+    display: block;
+  }
+
+  .container-img, .container-caixa {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  #imagem {
+    width: 80%;
+  }
+
+  #resultadoSelect {
+    font-size: 16px;
+  }
 }
     </style>
   </head>
