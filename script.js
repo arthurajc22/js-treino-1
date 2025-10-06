@@ -29,11 +29,11 @@ const caixa = document.querySelector("#caixa");
 
 caixa.addEventListener("mouseover", function () {
   caixa.style.backgroundColor = "yellow"; // muda a cor da caixa ao passar o mouse
-  caixa.textContent = "Obrigado mouse dentro !"; // muda o texto da caixa ao passar o mouse
+  caixa.textContent = "Surpresa, Ficou amarelo !"; // muda o texto da caixa ao passar o mouse
 });
 caixa.addEventListener("mouseout", function () {
   caixa.style.backgroundColor = "lightgray"; // volta a cor original da caixa ao tirar o mouse
-  caixa.textContent = "Passe o mouse aqui"; // volta o texto original da caixa ao tirar o mouse
+  caixa.textContent = "Passe o mouse aqui "; // volta o texto original da caixa ao tirar o mouse
 });
 
 // ===== EXERCÍCIO 5: change no select =====

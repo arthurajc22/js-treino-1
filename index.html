@@ -104,17 +104,19 @@ button:hover { background-color: yellow; }
 #selectOpcao:hover { background-color: yellow; }
 
 #caixa {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   width: 250px;
   height: 150px;
-  line-height: 150px;
-  text-align: center;
   font-size: clamp(14px, 2.5vw, 20px); /* fonte se ajusta a caixa */
   font-weight: bold;
   background-color: lightgray;
   cursor: pointer;
   border-radius: 10px;
   box-shadow: 2px 2px 5px black;
-  white-space: nowrap;/*nao deixa quebrar linha*/
+
   
 }
 
@@ -170,7 +172,7 @@ button:hover { background-color: yellow; }
 
       <div class="container-img">
 
-        <button id="botao2">Mostrar/Esconder imagem(duplo clique)</button>
+        <button id="botao2">Clique para aparecer a imagem</button>
         <img id="imagem"src="img/imagem-1.jpg" alt="Imagem teste"/>
   
       </div>
@@ -182,7 +184,7 @@ button:hover { background-color: yellow; }
           <option value="green">Verde</option>
           <option value="purple">Roxo</option>
         </select>
-        <div id="caixa">Passe o mouse</div>
+        <button id="caixa">Passe o mouse aqui</button>
       </div>
 
       <p id="resultadoSelect"></p>
