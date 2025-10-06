@@ -1,19 +1,16 @@
 // ===== EXERCÍCIO 1: clique que muda a cor do título =====
-const titulo = document.querySelector("#titulo");
-const botao1 = document.querySelector("#botao1");
+// ===== EXERCÍCIO 1: clique que muda e volta a cor do título =====
+const titulo = document.querySelector("#titulo")
+const botao1 = document.querySelector("#botao1")
 
 botao1.addEventListener("click", function () {
-  titulo.style.color = "red"; //muda a cor do h1
-});
-
-// ===== EXERCÍCIO 2: digitação no input =====
-const campoTexto = document.querySelector("#campoTexto");
-const resultado = document.querySelector("#resultado");
-
-campoTexto.addEventListener("keyup", function () {
-  resultado.textContent = campoTexto.value; //atualiza o texto do resultado mostra no <p></p> com o valor do input
-});
-
+  // Se a cor atual for vermelha, volta ao padrão (preto)
+  if (titulo.style.color === "red") {
+    titulo.style.color = "" // vazio volta ao padrão do CSS
+} else {
+    titulo.style.color = "red" // muda pra vermelho
+}
+})
 // ===== EXERCÍCIO 3: duplo clique que mostra/esconde imagem =====
 
 const imagem = document.querySelector("#imagem");
@@ -21,7 +18,7 @@ const botao2 = document.querySelector("#botao2");
 
 imagem.style.visibility = "hidden"; // O HIDDEN comeca com a imagem escondida e mantem o espaco reservado
 
-botao2.addEventListener("dblclick", function () {
+botao2.addEventListener("click", function () {
   imagem.style.visibility =
     imagem.style.visibility === "hidden" ? "visible" : "hidden"; // troca entre hidden e visible
 });
