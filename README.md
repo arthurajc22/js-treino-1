@@ -32,7 +32,7 @@ Página desenvolvida com **HTML**, **CSS** e **JavaScript** para treinar intera�
 ---
 
 ## 🖼 Preview
-![Print da página](imagens/treinan-eventos.png)
+![Print da página](img/treinan-eventos.png)
 
 ---
 
