@@ -1,4 +1,4 @@
-// ===== EXERCÍCIO 1: clique que muda a cor do título =====
+
 // ===== EXERCÍCIO 1: clique que muda e volta a cor do título =====
 const titulo = document.querySelector("#titulo")
 const botao1 = document.querySelector("#botao1")
@@ -11,6 +11,13 @@ botao1.addEventListener("click", function () {
     titulo.style.color = "red" // muda pra vermelho
 }
 })
+// ===== EXERCÍCIO texto da caixa do input aparece no meu <p></p> =====
+const input = document.querySelector("#campoTexto")
+const resultado = document.querySelector("#resultado")
+input.addEventListener("keyup", function(){
+  resultado.textContent = input.value
+})
+
 // ===== EXERCÍCIO 3: duplo clique que mostra/esconde imagem =====
 
 const imagem = document.querySelector("#imagem");

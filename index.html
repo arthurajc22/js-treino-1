@@ -116,6 +116,7 @@ button:hover { background-color: yellow; }
   cursor: pointer;
   border-radius: 10px;
   box-shadow: 2px 2px 5px black;
+  user-select: none; /* evita seleção de texto */
 
   
 }
@@ -125,49 +126,39 @@ button:hover { background-color: yellow; }
   font-size: 20px;
   font-weight: bold;
 }
-
 /* ===== Responsivo ===== */
-@media (max-width: 600px) {
-  main {
-    width: 95%;
-    padding: 20px;
-  }
 
-  h1 {
-    font-size: 36px;
-  }
-
-  button, select, input {
-    width: 90%;
-    margin: 10px auto;
-    display: block;
-  }
-
-  .container-img, .container-caixa {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  #imagem {
-    width: 80%;
-  }
-
-  #resultadoSelect {
-    font-size: 16px;
-  }
+/* Tablet */
+@media (max-width: 768px) {
+  h1 { font-size: 44px; }
+  main { margin: 24px auto; padding: 22px; }
+  .container-img { gap: 12px; }
+  #imagem { width: 230px; }
+  #botao2, #selectOpcao { width: 200px; }
+  .container-caixa { gap: 22px; }
+  #caixa { width: 230px; height: 140px; }
 }
-/* ===== Ajuste para ocupar mais altura no celular ===== */
-@media (max-width: 600px) {
-  body, html {
-    height: 100%;
-  }
 
-  main {
-    min-height: 90vh; /* ocupa 90% da altura da tela */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+/* Celular padrão */
+@media (max-width: 600px) {
+  h1 { font-size: 36px; }
+  main { width: 94%; padding: 18px; }
+
+  /* empilha blocos */
+  .container-img,
+  .container-caixa { flex-direction: column; gap: 18px; }
+
+  /* elementos ocupam largura confortável */
+  input, button, select { width: 92%; max-width: 360px; margin-left: auto; margin-right: auto; }
+  #imagem, #caixa { width: 92%; max-width: 360px; }
+  #resultadoSelect { font-size: 16px; }
+}
+
+/* Celular pequeno (mini) */
+@media (max-width: 380px) {
+  h1 { font-size: 30px; }
+  input, button, select { width: 100%; max-width: 320px; }
+  #imagem, #caixa { width: 100%; max-width: 320px; }
 }
     </style>
   </head>
